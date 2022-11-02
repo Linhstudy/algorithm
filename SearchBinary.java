@@ -41,8 +41,8 @@ public class SearchBinary {
 	 */
 	public static int FindK(int[] array, int n) {
 		int mid = n / 2, a = 0, b = 0, SumBeforeMid = 0, SumAfterMid = 0;
-		int[] arr1 = new int[n/2];
-		int[] arr2 = new int[n-n/2];
+		int[] arr1 = new int[0];
+		int[] arr2 = new int[0];
 		// Array with 2 values
 //		System.out.println("Mid K =" +mid);
 		if (n == 2) {
@@ -52,16 +52,16 @@ public class SearchBinary {
 				return -1;
 			}
 		} else {
-			arr1 = new int[n / 2];
-			arr2 = new int[n - n / 2];
+			arr1 = new int[(n / 2) + 1];
+			arr2 = new int[n - ((n / 2) +1)];
 			// Sum Array Before mid
-			for (int i = 0; i < n / 2; i++) {
+			for (int i = 0; i < (n / 2) + 1; i++) {
 				arr1[b] = array[i];
 				SumBeforeMid = SumBeforeMid + array[i];
 				b++;
 			}
 			// Sum Array After mid
-			for (int i = n / 2; i < n; i++) {
+			for (int i = (n / 2) + 1; i < n; i++) {
 				arr2[a] = array[i];
 				SumAfterMid = SumAfterMid + array[i];
 				a++;
